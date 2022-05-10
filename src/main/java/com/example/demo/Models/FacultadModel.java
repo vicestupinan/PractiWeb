@@ -11,6 +11,7 @@ public class FacultadModel {
     @Column(unique = true,nullable = false)
     private Long id;
 
+    @Column(unique = true, nullable = false)
     private String nombre;
 
     public Long getId() {
