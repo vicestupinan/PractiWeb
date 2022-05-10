@@ -1,6 +1,7 @@
 package com.example.demo.Services;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import com.example.demo.Models.UsuarioModel;
 import com.example.demo.Repositories.UsuarioRepository;
@@ -19,5 +20,9 @@ public class UsuarioService {
 
     public UsuarioModel guardarUsuario(UsuarioModel usuario){
         return usuarioRepository.save(usuario);
+    }
+
+    public Optional<UsuarioModel> obtenerPorCodigo(String codigo){
+        return usuarioRepository.findById(codigo);
     }
 }
