@@ -1,5 +1,7 @@
 package com.example.demo.Models;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,6 +18,9 @@ public class ProgramaModel {
     @ManyToOne
     @JoinColumn(name="id_facultad")
     private FacultadModel facultad;
+
+    @OneToMany(mappedBy = "programa")
+	Set<UsuarioRolModel> rolUsuario;
 
     public Long getId() {
         return this.id;

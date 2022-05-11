@@ -1,5 +1,7 @@
 package com.example.demo.Models;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,6 +16,9 @@ public class UsuarioModel {
     private String apellido;
     private String correo;
     private String telefono;
+
+	@OneToMany(mappedBy = "usuario")
+	Set<UsuarioRolModel> rolUsuario;
 
 	public String getCodigo() {
 		return this.codigo;
