@@ -13,8 +13,15 @@ public class FacultadService {
     @Autowired
     FacultadRepository facultadRepository;
 
-    public ArrayList<FacultadModel>obtenerFacultad(){
+    public ArrayList<FacultadModel> obtenerFacultad(){
         return (ArrayList<FacultadModel>)facultadRepository.findAll();
     }
+
+    public FacultadModel guardarFacultad(FacultadModel facultad){
+        return facultadRepository.save(facultad);
+    }
     
+    public ArrayList<FacultadModel> obtenerPorNombre(String nombre){
+        return facultadRepository.findByNombre(nombre);
+    }
 }
