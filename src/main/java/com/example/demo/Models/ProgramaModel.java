@@ -22,14 +22,6 @@ public class ProgramaModel {
     @OneToMany(mappedBy = "programa")
 	Set<UsuarioRolModel> rolUsuario;
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getNombre() {
         return this.nombre;
     }

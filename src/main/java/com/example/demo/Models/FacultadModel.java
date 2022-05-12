@@ -14,14 +14,6 @@ public class FacultadModel {
     @Column(unique = true, nullable = false)
     private String nombre;
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getNombre() {
         return this.nombre;
     }

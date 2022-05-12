@@ -17,14 +17,6 @@ public class RolModel {
     @OneToMany(mappedBy = "rol")
 	Set<UsuarioRolModel> rolUsuario;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getNombre() {
         return nombre;
     }
