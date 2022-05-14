@@ -17,6 +17,18 @@ public class PensumModel {
     @ManyToOne
     @JoinColumn(name="id_programa")
     private ProgramaModel programa;
+    
+    public PensumModel() {
+    }
+    
+
+    public PensumModel(Long id, String nombre, char estado, ProgramaModel programa) {
+        this.id = id;
+        this.nombre = nombre;
+        this.estado = estado;
+        this.programa = programa;
+    }
+
 
     public String getNombre() {
         return this.nombre;

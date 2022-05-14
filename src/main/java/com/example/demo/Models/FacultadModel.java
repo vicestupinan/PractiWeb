@@ -13,7 +13,15 @@ public class FacultadModel {
 
     @Column(unique = true, nullable = false)
     private String nombre;
-
+    
+    public FacultadModel() {
+    }
+    
+    public FacultadModel(Long id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+    
     public String getNombre() {
         return this.nombre;
     }
@@ -21,5 +29,9 @@ public class FacultadModel {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+
+    
+    
 
 }

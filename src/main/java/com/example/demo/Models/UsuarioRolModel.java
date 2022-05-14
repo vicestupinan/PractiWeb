@@ -26,6 +26,8 @@ public class UsuarioRolModel {
     
     private boolean estado;
 
+    
+
     public UsuarioRolPk getPk() {
         return pk;
     }

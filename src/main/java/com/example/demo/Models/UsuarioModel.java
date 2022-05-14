@@ -20,6 +20,19 @@ public class UsuarioModel {
 	@OneToMany(mappedBy = "usuario")
 	Set<UsuarioRolModel> rolUsuario;
 
+	public UsuarioModel() {
+	}
+
+	public UsuarioModel(String codigo, String nombre, String apellido, String correo, String telefono,
+			Set<UsuarioRolModel> rolUsuario) {
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.correo = correo;
+		this.telefono = telefono;
+		this.rolUsuario = rolUsuario;
+	}
+
 	public String getCodigo() {
 		return this.codigo;
 	}

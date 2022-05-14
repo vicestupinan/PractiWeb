@@ -22,6 +22,16 @@ public class ProgramaModel {
     @OneToMany(mappedBy = "programa")
 	Set<UsuarioRolModel> rolUsuario;
 
+    public ProgramaModel() {
+    }
+
+    public ProgramaModel(Long id, String nombre, FacultadModel facultad, Set<UsuarioRolModel> rolUsuario) {
+        this.id = id;
+        this.nombre = nombre;
+        this.facultad = facultad;
+        this.rolUsuario = rolUsuario;
+    }
+
     public String getNombre() {
         return this.nombre;
     }

@@ -17,6 +17,15 @@ public class RequisitosModel {
     @JoinColumn(name="id_pensum")
     private PensumModel pensum;
 
+    public RequisitosModel() {
+    }
+    
+    public RequisitosModel(Long id, String descripcion, PensumModel pensum) {
+        this.id = id;
+        this.descripcion = descripcion;
+        this.pensum = pensum;
+    }
+
     public String getDescripcion() {
         return this.descripcion;
     }

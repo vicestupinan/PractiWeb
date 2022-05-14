@@ -17,6 +17,15 @@ public class RolModel {
     @OneToMany(mappedBy = "rol")
 	Set<UsuarioRolModel> rolUsuario;
 
+    public RolModel() {
+    }
+
+    public RolModel(Long id, String nombre, Set<UsuarioRolModel> rolUsuario) {
+        this.id = id;
+        this.nombre = nombre;
+        this.rolUsuario = rolUsuario;
+    }
+
     public String getNombre() {
         return nombre;
     }
