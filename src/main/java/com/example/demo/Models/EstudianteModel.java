@@ -1,5 +1,7 @@
 package com.example.demo.Models;
 
+import java.sql.Date;
+
 import javax.persistence.*;
 /*Comentario*/
 @Entity
@@ -15,6 +17,15 @@ public class EstudianteModel {
     private String telefono;
     private String correo;
     private String periodoAspira;
+
+    @Column(name = "nombre_pensum")
+    private String pensum;
+    private boolean aprobacion;
+    private String motivo;
+    private String observaciones;
+    @Column(name = "codigo_encargado")
+    private String encargado;
+    private Date fecha;
 
     public EstudianteModel(){
         
@@ -77,5 +88,53 @@ public class EstudianteModel {
     public void setPeriodoAspira(String periodoAspira) {
         this.periodoAspira = periodoAspira;
     }
+
+    public String getPensum() {
+        return pensum;
+    }
+
+    public void setPensum(String pensum) {
+        this.pensum = pensum;
+    }
+
+    public boolean isAprobacion() {
+        return aprobacion;
+    }
+
+    public void setAprobacion(boolean aprobacion) {
+        this.aprobacion = aprobacion;
+    }
+
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
+    }
+
+    public String getEncargado() {
+        return encargado;
+    }
+
+    public void setEncargado(String encargado) {
+        this.encargado = encargado;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }  
 
 }
