@@ -20,17 +20,17 @@ public class FacultadController {
     FacultadService facultadService;
 
     @GetMapping()
-    public ArrayList<FacultadModel> obtenerFacultad(){
+    public ArrayList<FacultadModel> obtenerFacultad() {
         return facultadService.obtenerFacultad();
     }
 
     @PostMapping
-    public FacultadModel guardarFacultad(@RequestBody FacultadModel facultad){
+    public FacultadModel guardarFacultad(@RequestBody FacultadModel facultad) {
         return this.facultadService.guardarFacultad(facultad);
     }
 
     @GetMapping(path = "/{nombre}")
-    public ArrayList<FacultadModel> obtenerUsuarioPorId(@PathVariable("nombre") String nombre){
+    public ArrayList<FacultadModel> obtenerUsuarioPorId(@PathVariable("nombre") String nombre) {
         return this.facultadService.obtenerPorNombre(nombre);
     }
 }

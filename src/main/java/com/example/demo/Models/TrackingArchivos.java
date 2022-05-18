@@ -1,7 +1,7 @@
-package com.example.demo.Models;
+// package com.example.demo.Models;
 
-import javax.persistence.*;
+// import javax.persistence.*;
 
-public class TrackingArchivos {
+// public class TrackingArchivos {
     
-}
+// }
