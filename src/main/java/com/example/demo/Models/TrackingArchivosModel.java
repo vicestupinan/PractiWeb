@@ -22,6 +22,11 @@ public class TrackingArchivosModel {
     @JoinColumn(name="id_usuario")
     private UsuarioModel usuario;
 
+    public TrackingArchivosModel(String nombre_archivo, UsuarioModel usuario) {
+        this.nombre_archivo = nombre_archivo;
+        this.usuario = usuario;
+    }
+
     public String getNombre_archivo() {
         return nombre_archivo;
     }
@@ -32,10 +37,6 @@ public class TrackingArchivosModel {
 
     public Date getFecha_subida() {
         return fecha_subida;
-    }
-
-    public void setFecha_subida(Date fecha_subida) {
-        this.fecha_subida = fecha_subida;
     }
 
     public UsuarioModel getUsuario() {
