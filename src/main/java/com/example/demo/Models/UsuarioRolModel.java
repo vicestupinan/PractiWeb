@@ -3,58 +3,48 @@ package com.example.demo.Models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="usuario_rol")
+@Table(name = "usuario_rol")
 public class UsuarioRolModel {
-    
-    @EmbeddedId
-    private UsuarioRolPk pk;
-    
-    @ManyToOne
-    @MapsId("usuario")
-    @JoinColumn(name = "codigo_usuario")
-    private UsuarioModel usuario;
 
-    @ManyToOne
-    @MapsId("programa")
-    @JoinColumn(name = "programa_id")
-    private ProgramaModel programa;
-    
-    @ManyToOne
-    @MapsId("rol")
-    @JoinColumn(name = "rol_id")
-    private RolModel rol;
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
+    private Long id;
+
+    private String usuario;
+    private Long programa;
+    private Long rol;
+
     private boolean estado;
 
-    public UsuarioRolPk getPk() {
-        return pk;
-    }
-
-    public void setPk(UsuarioRolPk pk) {
-        this.pk = pk;
-    }
-
-    public UsuarioModel getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(UsuarioModel usuario) {
+    public UsuarioRolModel(String usuario, Long programa, Long rol, boolean estado) {
         this.usuario = usuario;
+        this.programa = programa;
+        this.rol = rol;
+        this.estado = estado;
     }
 
-    public ProgramaModel getPrograma() {
+    public Long getPrograma() {
         return programa;
     }
 
-    public void setPrograma(ProgramaModel programa) {
+    public void setPrograma(Long programa) {
         this.programa = programa;
     }
 
-    public RolModel getRol() {
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public Long getRol() {
         return rol;
     }
 
-    public void setRol(RolModel rol) {
+    public void setRol(Long rol) {
         this.rol = rol;
     }
 
@@ -67,5 +57,3 @@ public class UsuarioRolModel {
     }
 
 }
-
-

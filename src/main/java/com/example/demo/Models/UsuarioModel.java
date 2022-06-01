@@ -1,27 +1,28 @@
 package com.example.demo.Models;
 
-import java.util.Set;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name="usuario")
+@Table(name = "usuario")
 public class UsuarioModel {
 
-    @Id
-    @Column(unique = true, nullable = false)
-    private String codigo;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(unique = true, nullable = false)
+	private Long id;
 
-    private String nombre;
-    private String apellido;
-    private String correo;
-    private String telefono;
+	private String codigo;
+	private String nombre;
+	private String apellido;
+	private String correo;
+	private String telefono;
 
-	@OneToMany(mappedBy = "usuario")
-	Set<UsuarioRolModel> rolUsuario;
+	public Long getId() {
+		return id;
+	}
 
 	public String getCodigo() {
-		return this.codigo;
+		return codigo;
 	}
 
 	public void setCodigo(String codigo) {
@@ -29,7 +30,7 @@ public class UsuarioModel {
 	}
 
 	public String getNombre() {
-		return this.nombre;
+		return nombre;
 	}
 
 	public void setNombre(String nombre) {
@@ -37,7 +38,7 @@ public class UsuarioModel {
 	}
 
 	public String getApellido() {
-		return this.apellido;
+		return apellido;
 	}
 
 	public void setApellido(String apellido) {
@@ -45,7 +46,7 @@ public class UsuarioModel {
 	}
 
 	public String getCorreo() {
-		return this.correo;
+		return correo;
 	}
 
 	public void setCorreo(String correo) {
@@ -53,11 +54,11 @@ public class UsuarioModel {
 	}
 
 	public String getTelefono() {
-		return this.telefono;
+		return telefono;
 	}
 
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
-	}    
+	}
 
 }

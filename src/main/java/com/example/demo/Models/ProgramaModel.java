@@ -1,40 +1,34 @@
 package com.example.demo.Models;
 
-import java.util.Set;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name="programa")
+@Table(name = "programa")
 public class ProgramaModel {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true,nullable = false)
+    @Column(unique = true, nullable = false)
     private Long id;
 
+    @Column(unique = true, nullable = false)
     private String nombre;
 
-    @ManyToOne
-    @JoinColumn(name="id_facultad")
-    private FacultadModel facultad;
-
-    @OneToMany(mappedBy = "programa")
-	Set<UsuarioRolModel> rolUsuario;
+    private Long facultad;
 
     public String getNombre() {
-        return this.nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public FacultadModel getFacultad() {
-        return this.facultad;
+    public Long getFacultad() {
+        return facultad;
     }
 
-    public void setFacultad(FacultadModel facultad) {
+    public void setFacultad(Long facultad) {
         this.facultad = facultad;
     }
 

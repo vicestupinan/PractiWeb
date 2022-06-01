@@ -17,7 +17,7 @@ public class RolService {
         return (ArrayList<RolModel>)rolRepository.findAll();
     }
 
-    public RolModel guardarPrograma(RolModel rol){
+    public RolModel guardarRol(RolModel rol){
         return rolRepository.save(rol);
     }
 }

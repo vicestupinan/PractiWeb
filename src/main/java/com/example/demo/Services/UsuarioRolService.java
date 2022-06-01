@@ -17,7 +17,7 @@ public class UsuarioRolService {
         return (ArrayList<UsuarioRolModel>)usuarioRolRepository.findAll();
     }
 
-    public UsuarioRolModel guardarPrograma(UsuarioRolModel usuarioRol){
+    public UsuarioRolModel guardarUsuarioRol(UsuarioRolModel usuarioRol){
         return usuarioRolRepository.save(usuarioRol);
     }
 }

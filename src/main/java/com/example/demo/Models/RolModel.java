@@ -1,7 +1,5 @@
 package com.example.demo.Models;
 
-import java.util.Set;
-
 import javax.persistence.*;
 
 @Entity
@@ -9,13 +7,15 @@ import javax.persistence.*;
 public class RolModel {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id;
 
     private String nombre;
 
-    @OneToMany(mappedBy = "rol")
-	Set<UsuarioRolModel> rolUsuario;
+    public Long getId() {
+        return id;
+    }
 
     public String getNombre() {
         return nombre;

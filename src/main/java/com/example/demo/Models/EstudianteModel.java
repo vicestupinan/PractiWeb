@@ -1,45 +1,30 @@
 package com.example.demo.Models;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.*;
-/*Comentario*/
+
 @Entity
 @Table(name = "estudiante")
 public class EstudianteModel {
-
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private String codigo;
+    private Long id;
 
+    private String codigo;
     private String nombre;
     private String apellido;
     private String telefono;
     private String correo;
     private String periodoAspira;
 
-    @Column(name = "nombre_pensum")
     private String pensum;
     private boolean aprobacion;
     private String motivo;
     private String observaciones;
-    @Column(name = "codigo_encargado")
     private String encargado;
     private Date fecha;
-
-    public EstudianteModel(){
-        
-    }
-    
-    public EstudianteModel(String codigo, String nombre, String apellido, String telefono, String correo,
-            String periodoAspira) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-        this.correo = correo;
-        this.periodoAspira = periodoAspira;
-    }
 
     public String getCodigo() {
         return codigo;
@@ -135,6 +120,6 @@ public class EstudianteModel {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
-    }  
+    }
 
 }
