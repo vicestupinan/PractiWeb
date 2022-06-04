@@ -10,7 +10,7 @@ public class EstudianteModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private Long id;
+    private int id;
 
     private String codigo;
     private String nombre;
@@ -25,6 +25,14 @@ public class EstudianteModel {
     private String observaciones;
     private String encargado;
     private Date fecha;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getCodigo() {
         return codigo;
