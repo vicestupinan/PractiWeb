@@ -18,13 +18,8 @@ public class TrackingArchivosModel {
     @Temporal(TemporalType.DATE)
     private Date fecha_subida = new Date();
 
-    @ManyToOne
-    @JoinColumn(name="id_usuario")
-    private UsuarioModel usuario;
-
-    public TrackingArchivosModel(String nombre_archivo, UsuarioModel usuario) {
+    public TrackingArchivosModel(String nombre_archivo) {
         this.nombre_archivo = nombre_archivo;
-        this.usuario = usuario;
     }
 
     public String getNombre_archivo() {
@@ -37,14 +32,6 @@ public class TrackingArchivosModel {
 
     public Date getFecha_subida() {
         return fecha_subida;
-    }
-
-    public UsuarioModel getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(UsuarioModel usuario) {
-        this.usuario = usuario;
     }
 
 }
