@@ -9,12 +9,20 @@ public class ProgramaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private Long id;
+    private int id;
 
     @Column(unique = true, nullable = false)
     private String nombre;
 
-    private Long facultad;
+    private int facultad;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;
@@ -24,11 +32,11 @@ public class ProgramaModel {
         this.nombre = nombre;
     }
 
-    public Long getFacultad() {
+    public int getFacultad() {
         return facultad;
     }
 
-    public void setFacultad(Long facultad) {
+    public void setFacultad(int facultad) {
         this.facultad = facultad;
     }
 

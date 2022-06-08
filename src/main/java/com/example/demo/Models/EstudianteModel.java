@@ -20,9 +20,13 @@ public class EstudianteModel {
     private String periodoAspira;
 
     private String pensum;
+    @Column(columnDefinition = "boolean default 'false'")
     private boolean aprobacion;
+    @Column(columnDefinition = "varchar(255) default 'No aprobado'")
     private String motivo;
+    @Column(columnDefinition = "varchar(255) default 'No aprobado'")
     private String observaciones;
+    @Column(columnDefinition = "varchar(255) default 'No aprobado'")
     private String encargado;
     private Date fecha;
 

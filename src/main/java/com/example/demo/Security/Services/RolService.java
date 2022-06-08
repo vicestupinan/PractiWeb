@@ -8,6 +8,7 @@ import com.example.demo.Security.Enums.RolNombre;
 import com.example.demo.Security.Models.Rol;
 import com.example.demo.Security.Repositories.RolRepository;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -23,5 +24,9 @@ public class RolService {
 
     public void save(Rol rol){
         rolRepository.save(rol);
+    }
+
+    public ArrayList<Rol> obtenerRoles(){
+        return (ArrayList<Rol>)rolRepository.findAll();
     }
 }

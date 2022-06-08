@@ -22,6 +22,7 @@ import com.example.demo.Security.Models.Usuario;
 import com.example.demo.Security.Services.RolService;
 import com.example.demo.Security.Services.UsuarioService;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -78,5 +79,10 @@ public class AuthController {
         UserDetails userDetails = (UserDetails)authentication.getPrincipal();
         JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), userDetails.getAuthorities());
         return new ResponseEntity<JwtDto>(jwtDto, HttpStatus.OK);
+    }
+
+    @GetMapping("/rol")
+    public ArrayList<Rol> obtenerRoles(){
+        return rolService.obtenerRoles();
     }
 }

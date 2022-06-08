@@ -28,5 +28,9 @@ public class EstudianteService {
     public ArrayList<EstudianteModel> obtenerEstudiante(){
         return (ArrayList<EstudianteModel>)estudianteRepository.findAll();
     }
+
+    public EstudianteModel guardarEstudiante(EstudianteModel estudiante) {
+        return estudianteRepository.save(estudiante);
+    }
     
 }
